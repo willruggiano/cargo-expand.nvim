@@ -1,4 +1,4 @@
-local job_ctrl = require "firvish.job_control2"
+local jobs = require "firvish.lib.jobs"
 
 local M = {}
 
@@ -14,7 +14,7 @@ local default_opts = {
 }
 
 M.expand = function(opts)
-  job_ctrl.start_job(vim.tbl_deep_extend("force", default_opts, opts or {}))
+  jobs.start_job(vim.tbl_deep_extend("force", default_opts, opts or {}))
 end
 
 return M
